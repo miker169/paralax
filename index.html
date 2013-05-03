@@ -36,11 +36,22 @@
     }
   </style>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <script type ="text/js">
+  <script>
     $(document).ready(function() {
+      var $window = $(window);
       $('section[data-type="background"]').each(function() {
         var $bgobj = $(this); //assigning the object
         $(window).scroll(function() {
+          //The yPos will be a negative value because
+          // we have to move the backgroun in the
+          // opposite direction of the users scroll
+          var yPos = -($window.scrollTop()/$bgobj.data('speed'));
+
+          // Put togerther our final background position
+          var coords = '50%' + yPos +'px';
+
+          // Move the background
+          $bgobj.css({backgroundPosition: coords});
         });
       });
       
