@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+  <title> Paralax Scrolling Demo</title>
+  <style>
+    #home{
+      background: url(home.jpg) 50% 0 repeat fixed; min-height: 1000px;
+      height: 1000px;
+      margin 0 auto;
+      width: 100%;
+      max-width: 1920px;
+      postion: relative;
+    }
+    #home article {
+      height 458px;
+      position: absolute;
+      text-align: center;
+      top: 150px;
+      width: 100%;
+    }
+    #about{
+      background: url(about.jpg) 50% 0 no-repeat; min-height: 1000px;
+      height: 1000px;
+      margin 0 auto;
+      width: 100%;
+      max-width: 1920px;
+      position: relative;
+      -webkit-box-shadow: 0 0 50px rgba(0,0,0.8);
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    }
+    #about article {
+      height: 458px;
+      position: absolute;
+      text-align: center;
+      top: 150px;
+      width: 100%;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script type ="text/js">
+    $(document).ready(function() {
+      $('section[data-type="background"]').each(function() {
+        var $bgobj = $(this); //assigning the object
+        $(window).scroll(function() {
+        });
+      });
+      
+    })
+    
+  </script>
+</head>
+<body>
+  <section id="home" data-type="background" data-speed="10" class="pages">
+    <article>I am absolute positioned</article>
+  </section>
+  <section id="about" data-type="background" data-speed="10" class="pages">
+    <article>Simpe Parallax Scroll</article>
+  </section>
+</body>
+
